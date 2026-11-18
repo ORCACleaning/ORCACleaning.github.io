@@ -1,4 +1,0 @@
-Inter is licensed under the SIL Open Font License 1.1.
-Copyright (c) 2016 The Inter Project Authors (https://github.com/rsms/inter).
-Source Serif 4 is licensed under the SIL Open Font License 1.1.
-Copyright 2014-2023 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'.

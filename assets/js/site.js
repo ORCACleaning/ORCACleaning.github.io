@@ -100,7 +100,7 @@
       });
       render(hits, terms);
     };
-    fetch("/wh-preview/search-index.json").then(function (r) { return r.json(); }).then(function (j) { data = j; run(); }).catch(function () {
+    fetch("/search-index.json").then(function (r) { return r.json(); }).then(function (j) { data = j; run(); }).catch(function () {
       out.innerHTML = '<p class="sr-empty">Search is unavailable right now.</p>';
     });
     q.addEventListener("input", run);
