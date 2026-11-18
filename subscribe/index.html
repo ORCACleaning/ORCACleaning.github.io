@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subscribe free · Western Host</title>
+<meta name="description" content="Sign up to get Western Host free each month by email. Double opt-in, unsubscribe any time.">
+<link rel="canonical" href="https://westernhost.com.au/subscribe/">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:site_name" content="Western Host">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Subscribe free · Western Host">
+<meta property="og:description" content="Sign up to get Western Host free each month by email. Double opt-in, unsubscribe any time.">
+<meta property="og:url" content="https://westernhost.com.au/subscribe/">
+<meta property="og:image" content="https://westernhost.com.au/assets/img/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="preload" href="/assets/fonts/SourceSerif4-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="alternate" type="application/rss+xml" title="Western Host issues" href="/feed.xml">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="/">Western <span>Host</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="primary" id="nav" aria-label="Primary"><ul><li><a href="/">Home</a></li><li><a href="/issues/2026-11/">Issue 1</a></li><li><a href="/subscribe/" aria-current="page">Subscribe</a></li><li><a href="/about/">About</a></li><li><a href="/advertise/">Advertise</a></li></ul></nav>
+  </div>
+</header><main id="main"><div class="wrap"><div class="measure">
+    <p class="kicker">Subscribe</p>
+    <h1 class="article-title">Get Western Host free every month</h1>
+    <p class="standfirst">One issue a month, by email. We confirm by email before anything is sent, and you can unsubscribe any time.</p>
+    <section class="signup">
+      <div class="placeholder-flag"><strong>Set-up note (not shown at go-live):</strong> this form is not yet connected to our email provider (Sender). No address is stored or emailed yet. Access to the Sender account is required to activate double opt-in.</div>
+      <form id="su-form" action="/subscribe/placeholder-not-connected" method="post" novalidate aria-describedby="su-result">
+        <input type="hidden" name="consent_wording_version" value="v1-2026-11">
+        <input type="hidden" name="source_page" value="/subscribe/">
+        <div class="field">
+          <label for="email">Email address <span class="req">(required)</span></label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="fname">First name (optional)</label>
+          <input type="text" id="fname" name="first_name" autocomplete="given-name">
+        </div>
+        <div class="consent">
+          <input type="checkbox" id="c1" name="consent_magazine" value="yes">
+          <label for="c1">Send me Western Host each month. It contains advertising, including for ORCA Cleaning, ORCA Plus and IVEREL. <span class="req">(required to subscribe)</span></label>
+        </div>
+        <div class="consent">
+          <input type="checkbox" id="c2" name="consent_orca_marketing" value="yes">
+          <label for="c2">Also send me occasional marketing emails about ORCA services. (optional)</label>
+        </div>
+        <p><button class="btn" type="submit">Sign up</button></p>
+        <p id="su-result" class="su-result" role="status" aria-live="polite" hidden></p>
+        <p class="collection-notice">Western Host is published by GG Investors Pty Ltd. We use your email to send what you ticked. We never sell or give our list to advertisers. Unsubscribe any time. See our <a href="/privacy/">privacy policy</a>.<br>One issue a month.</p>
+      </form>
+    </section>
+    <p class="fine" style="font-family:var(--sans);font-size:.85rem;color:var(--small)">Double opt-in: after you sign up we send one plain confirmation email with no advertising. Your subscription starts only when you confirm. We record which boxes you ticked, the wording version, the time and the page you signed up from, so you can change or withdraw either consent later.</p>
+    </div></div>
+    <script>
+    /* Placeholder submit handler. No email provider is connected yet.
+       Nothing is sent, stored or transmitted anywhere; we only show a message. */
+    (function(){
+      var f=document.getElementById('su-form'),out=document.getElementById('su-result');
+      if(!f||!out)return;
+      f.addEventListener('submit',function(e){
+        e.preventDefault();
+        var email=(f.email&&f.email.value||'').trim(),c1=f.c1&&f.c1.checked;
+        if(!email||email.indexOf('@')<1){
+          out.hidden=false;out.className='su-result su-hint';
+          out.textContent='Please enter your email address so you are ready when sign-up opens.';
+          if(f.email)f.email.focus();return;
+        }
+        if(!c1){
+          out.hidden=false;out.className='su-result su-hint';
+          out.textContent='Please tick the first box to subscribe to the magazine.';
+          if(f.c1)f.c1.focus();return;
+        }
+        out.hidden=false;out.className='su-result su-ok';
+        out.textContent='Sign-up opens soon. Nothing has been stored or sent yet; please check back shortly to confirm your subscription.';
+      });
+    })();
+    </script></main><footer class="site-footer">
+  <div class="wrap">
+    <p class="discl">Western Host is published by GG Investors Pty Ltd (ABN 57 682 794 047), which also operates ORCA Cleaning, ORCA Plus and IVEREL.</p>
+    <nav aria-label="Footer"><ul><li><a href="/about/">About</a></li><li><a href="/advertise/">Advertise</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/corrections/">Corrections</a></li><li><a href="/subscribe/">Subscribe</a></li></ul></nav>
+    <p class="fine">Editor: Behzad Bagheri. Advertisements are labelled ADVERTISEMENT; advertisers, including our publisher's own businesses, have no say over our articles. General information only, current to 17 November 2026. Not legal, tax or financial advice. Contact and corrections: <a href="mailto:westernhost@gginvestors.com.au">westernhost@gginvestors.com.au</a>.</p>
+  </div>
+</footer>
+<script>
+(function(){var b=document.querySelector('.nav-toggle'),n=document.getElementById('nav');
+if(b&&n){b.addEventListener('click',function(){var o=n.classList.toggle('open');
+b.setAttribute('aria-expanded',o?'true':'false');});}})();
+</script>
+</body></html>

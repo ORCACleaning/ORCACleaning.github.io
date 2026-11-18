@@ -1,0 +1,4 @@
+# Western Host
+# Hidden until go-live: every page also carries noindex,nofollow (meta + X-Robots-Tag header).
+User-agent: *
+Disallow: /
