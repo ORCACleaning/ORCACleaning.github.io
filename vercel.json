@@ -28,17 +28,77 @@
   "redirects": [
     {
       "source": "/downloads/Western-Host-2026-11-Issue-23.pdf",
-      "destination": "/downloads/Western-Host-2026-11-Issue-1.pdf",
+      "destination": "/downloads/Western-Host-2026-12-Issue-1.pdf",
+      "permanent": false
+    },
+    {
+      "source": "/downloads/Western-Host-2026-11-Issue-1.pdf",
+      "destination": "/downloads/Western-Host-2026-12-Issue-1.pdf",
       "permanent": false
     },
     {
       "source": "/issue-1/",
-      "destination": "/issues/2026-11/",
+      "destination": "/issues/2026-12/",
       "permanent": false
     },
     {
       "source": "/issue-23/",
-      "destination": "/issues/2026-11/",
+      "destination": "/issues/2026-12/",
+      "permanent": false
+    },
+    {
+      "source": "/issues/2026-11/",
+      "destination": "/issues/2026-12/",
+      "permanent": false
+    },
+    {
+      "source": "/issues/2026-11/the-rules/",
+      "destination": "/issues/2026-12/the-rules/",
+      "permanent": false
+    },
+    {
+      "source": "/issues/2026-11/register-first-list-second/",
+      "destination": "/issues/2026-12/register-first-list-second/",
+      "permanent": false
+    },
+    {
+      "source": "/issues/2026-11/perth-by-the-numbers/",
+      "destination": "/issues/2026-12/perth-by-the-numbers/",
+      "permanent": false
+    },
+    {
+      "source": "/issues/2026-11/ato-platform-reporting/",
+      "destination": "/issues/2026-12/ato-platform-reporting/",
+      "permanent": false
+    },
+    {
+      "source": "/issues/2026-11/peak-season-checklist/",
+      "destination": "/issues/2026-12/peak-season-checklist/",
+      "permanent": false
+    },
+    {
+      "source": "/issues/2026-11/airbnb-house-rules/",
+      "destination": "/issues/2026-12/airbnb-house-rules/",
+      "permanent": false
+    },
+    {
+      "source": "/issues/2026-11/the-basket-queen-bed/",
+      "destination": "/issues/2026-12/the-basket-queen-bed/",
+      "permanent": false
+    },
+    {
+      "source": "/issues/2026-11/next-60-days/",
+      "destination": "/issues/2026-12/next-60-days/",
+      "permanent": false
+    },
+    {
+      "source": "/issues/2026-11/ask-western-host/",
+      "destination": "/issues/2026-12/ask-western-host/",
+      "permanent": false
+    },
+    {
+      "source": "/issues/2026-11/case-file-missing-number/",
+      "destination": "/issues/2026-12/case-file-missing-number/",
       "permanent": false
     }
   ]
