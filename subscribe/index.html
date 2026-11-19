@@ -41,7 +41,7 @@
       <div class="placeholder-flag"><strong>Set-up note (not shown at go-live):</strong> this form is not yet connected to our email provider (Sender). No address is stored or emailed yet. Access to the Sender account is required to activate double opt-in.</div>
       <p class="consent-text">When you sign up you choose what you receive: the magazine (which contains labelled advertising, including for businesses owned by GG Investors Pty Ltd), and, only if you tick the separate box below, occasional marketing. You confirm by email before anything is sent.</p>
       <form id="su-form" action="/subscribe/placeholder-not-connected" method="post" novalidate aria-describedby="su-result">
-        <input type="hidden" name="consent_wording_version" value="v2-2026-11-19">
+        <input type="hidden" name="consent_wording_version" value="v3-2026-11-19">
         <input type="hidden" name="source_page" value="/subscribe/">
         <div class="field">
           <label for="email">Email address <span class="req">(required)</span></label>
@@ -57,14 +57,14 @@
         </div>
         <div class="consent">
           <input type="checkbox" id="c2" name="consent_publisher_marketing" value="yes">
-          <label for="c2">I agree to receive occasional marketing emails from GG Investors Pty Ltd about its cleaning, short-stay property support and AI automation services. I can unsubscribe at any time.</label>
+          <label for="c2">Send me Western Host reader offers for services provided by its publisher, GG Investors Pty Ltd, including cleaning, property support and AI services.</label>
         </div>
         <p><button class="btn" type="submit">Sign up</button></p>
         <p id="su-result" class="su-result" role="status" aria-live="polite" hidden></p>
         <p class="collection-notice">Western Host is published by GG Investors Pty Ltd. We use your email to send what you ticked. We never sell or give our list to advertisers. Unsubscribe any time. See our <a href="/privacy/">privacy policy</a>.<br>One issue a month.</p>
       </form>
     </section>
-    <p class="fine" style="font-family:var(--sans);font-size:.85rem;color:var(--small)">Double opt-in: after you sign up we send one plain confirmation email with no advertising. Your subscription starts only when you confirm. We record which boxes you ticked, the wording version, the time and the page you signed up from, so you can change or withdraw either consent later.</p>
+    <p class="fine" style="font-family:var(--sans);font-size:.85rem;color:var(--small)">Double opt-in: after you sign up we send one plain confirmation email with no advertising. Your subscription starts only when you confirm. We record which boxes you ticked, the wording version, the time and the page you signed up from, so you can change or withdraw either consent later. Every email we send names GG Investors Pty Ltd as the sender and has a working unsubscribe link.</p>
     </div></div>
     <script>
     /* Placeholder submit handler. No email provider is connected yet.
