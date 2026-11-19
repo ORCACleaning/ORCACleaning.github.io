@@ -39,8 +39,9 @@
     <p class="standfirst">One issue a month, by email. We confirm by email before anything is sent, and you can unsubscribe any time.</p>
     <section class="signup">
       <div class="placeholder-flag"><strong>Set-up note (not shown at go-live):</strong> this form is not yet connected to our email provider (Sender). No address is stored or emailed yet. Access to the Sender account is required to activate double opt-in.</div>
+      <p class="consent-text">When you sign up you choose what you receive: the magazine (which contains labelled advertising, including for businesses owned by GG Investors Pty Ltd), and, only if you tick the separate box below, occasional marketing. You confirm by email before anything is sent.</p>
       <form id="su-form" action="/subscribe/placeholder-not-connected" method="post" novalidate aria-describedby="su-result">
-        <input type="hidden" name="consent_wording_version" value="v1-2026-11">
+        <input type="hidden" name="consent_wording_version" value="v2-2026-11-19">
         <input type="hidden" name="source_page" value="/subscribe/">
         <div class="field">
           <label for="email">Email address <span class="req">(required)</span></label>
@@ -52,11 +53,11 @@
         </div>
         <div class="consent">
           <input type="checkbox" id="c1" name="consent_magazine" value="yes">
-          <label for="c1">Send me Western Host each month. It contains advertising, including for ORCA Cleaning, ORCA Plus and IVEREL. <span class="req">(required to subscribe)</span></label>
+          <label for="c1">Send me Western Host each month. <span class="req">(required to subscribe)</span></label>
         </div>
         <div class="consent">
-          <input type="checkbox" id="c2" name="consent_orca_marketing" value="yes">
-          <label for="c2">Also send me occasional marketing emails about ORCA services. (optional)</label>
+          <input type="checkbox" id="c2" name="consent_publisher_marketing" value="yes">
+          <label for="c2">I agree to receive occasional marketing emails from GG Investors Pty Ltd about its cleaning, short-stay property support and AI automation services. I can unsubscribe at any time.</label>
         </div>
         <p><button class="btn" type="submit">Sign up</button></p>
         <p id="su-result" class="su-result" role="status" aria-live="polite" hidden></p>
@@ -90,10 +91,10 @@
     })();
     </script></main><footer class="site-footer">
   <div class="wrap">
-    <p class="discl">Western Host is published by GG Investors Pty Ltd (ABN 57 682 794 047), which also operates ORCA Cleaning, ORCA Plus and IVEREL.</p>
+    <p class="discl">Western Host is published by GG Investors Pty Ltd (ABN 57 682 794 047), Perth, Western Australia.</p>
     <nav aria-label="Footer"><ul><li><a href="/about/">About</a></li><li><a href="/advertise/">Advertise</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/corrections/">Corrections</a></li><li><a href="/subscribe/">Subscribe</a></li><li><a href="/feed.xml">RSS</a></li></ul></nav>
     <p class="footer-tools"><button class="theme-toggle link-toggle" type="button" aria-pressed="false"><span class="tog-light">Switch to dark</span><span class="tog-dark">Switch to light</span></button></p>
-    <p class="fine">Editor: Behzad Bagheri. Advertisements are labelled ADVERTISEMENT; advertisers, including our publisher's own businesses, have no say over our articles. General information only, current to 17 November 2026. Not legal, tax or financial advice. Contact and corrections: <a href="mailto:westernhost@gginvestors.com.au">westernhost@gginvestors.com.au</a>.</p>
+    <p class="fine">Editor: Behzad Bagheri. Advertisements are labelled ADVERTISEMENT. Advertisers, including businesses owned by our publisher, have no say over our articles. General information only, current to 17 November 2026. Not legal, tax or financial advice. Contact and corrections: <a href="mailto:westernhost@gginvestors.com.au">westernhost@gginvestors.com.au</a>.</p>
   </div>
 </footer>
 </body></html>
