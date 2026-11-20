@@ -99,7 +99,7 @@
         fetch(API,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(body)})
           .then(function(r){return r.json().catch(function(){return {ok:false};});})
           .then(function(j){
-            if(j&&j.ok){show('su-ok',j.message||'Check your email: we have sent you one message with a link to confirm.');f.reset();}
+            if(j&&j.ok){show('su-ok',(j.message||'Check your email: we have sent you one message with a link to confirm.')+' Can\'t see it? Check your spam or junk folder.');f.reset();}
             else{show('su-hint',(j&&j.message)||'Something went wrong. Please try again.');if(btn)btn.disabled=false;}
           })
           .catch(function(){show('su-hint','We could not reach the sign-up service. Please check your connection and try again.');if(btn)btn.disabled=false;});
