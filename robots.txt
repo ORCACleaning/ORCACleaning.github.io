@@ -1,4 +1,7 @@
 # Western Host
-# Hidden until go-live: every page also carries noindex,nofollow (meta + X-Robots-Tag header).
 User-agent: *
-Disallow: /
+Disallow: /subscribe/check-your-email/
+Disallow: /subscribe/confirm/
+Disallow: /404.html
+Allow: /
+Sitemap: https://westernhost.com.au/sitemap.xml
