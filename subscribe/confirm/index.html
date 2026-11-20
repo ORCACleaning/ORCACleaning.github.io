@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{var t=localStorage.getItem('wh-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<title>Confirm your subscription · Western Host</title>
+<meta name="description" content="Confirm your Western Host subscription.">
+<link rel="canonical" href="https://westernhost.com.au/subscribe/confirm/">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#F5F1E8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14110E" media="(prefers-color-scheme: dark)">
+<meta property="og:site_name" content="Western Host">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Confirm your subscription · Western Host">
+<meta property="og:description" content="Confirm your Western Host subscription.">
+<meta property="og:url" content="https://westernhost.com.au/subscribe/confirm/">
+<meta property="og:image" content="https://westernhost.com.au/assets/img/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="preload" href="/assets/fonts/SourceSerif4-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/Poppins-Medium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="alternate" type="application/rss+xml" title="Western Host issues" href="/feed.xml">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<script src="/assets/js/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="/">Western <span>Host</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="primary" id="nav" aria-label="Primary"><ul><li><a href="/">Home</a></li><li><a href="/issues/2026-12/">Issue 1</a></li><li><a href="/subscribe/" aria-current="page">Subscribe</a></li><li><a href="/about/">About</a></li><li><a href="/advertise/">Advertise</a></li></ul></nav>
+    <div class="head-tools"><a class="icon-btn" href="/search/" aria-label="Search the magazine"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="16.3" y1="16.3" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a><button class="icon-btn theme-toggle" type="button" aria-label="Switch between light and dark" aria-pressed="false"><svg class="i-sun" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1.6" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.4"/><line x1="1.6" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.4" y2="12"/><line x1="4.4" y1="4.4" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.6" y2="19.6"/><line x1="4.4" y1="19.6" x2="6.1" y2="17.9"/><line x1="17.9" y1="6.1" x2="19.6" y2="4.4"/></g></svg><svg class="i-moon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button></div>
+  </div>
+</header><main id="main"><div class="wrap"><div class="measure">
+    <p class="kicker">Subscribe</p>
+    <h1 class="article-title" id="cf-title">Confirming your subscription</h1>
+    <section class="signup">
+      <p id="cf-result" class="su-result su-hint" role="status" aria-live="polite">One moment, we are confirming your subscription.</p>
+      <noscript><p class="su-result su-hint">This page needs JavaScript to confirm your subscription. If you cannot turn it on, email <a href="mailto:westernhost@gginvestors.com.au">westernhost@gginvestors.com.au</a> from the address you signed up with and we will confirm it for you.</p></noscript>
+      <p id="cf-again" hidden><a class="btn" href="/subscribe/">Sign up again</a></p>
+    </section>
+    <p class="fine" style="font-family:var(--sans);font-size:.85rem;color:var(--small)">Western Host is published by GG Investors Pty Ltd (ABN 57 682 794 047), Perth, Western Australia. Every email we send names GG Investors Pty Ltd as the sender and has a working unsubscribe link.</p>
+    </div></div>
+    <script>
+    /* Confirm page: the link in the confirmation email lands here with ?t=<signed token>. The page posts the token to the
+       server-side function, which creates the reader in Sender only now. A GET never confirms, so a link scanner cannot
+       subscribe anybody. */
+    (function(){
+      var API='https://dzemryadwiijfybotuuw.supabase.co/functions/v1/wh-subscribe';
+      var out=document.getElementById('cf-result'),h=document.getElementById('cf-title'),again=document.getElementById('cf-again');
+      if(!out)return;
+      function show(cls,title,msg,showAgain){out.className='su-result '+cls;out.textContent=msg;if(h&&title)h.textContent=title;if(again)again.hidden=!showAgain;}
+      var t='';try{t=new URLSearchParams(location.search).get('t')||'';}catch(e){}
+      if(!t){show('su-hint','This link is incomplete','Please open the full link from your confirmation email, or sign up again.',true);return;}
+      fetch(API+'/confirm',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({t:t})})
+        .then(function(r){return r.json().catch(function(){return {ok:false};});})
+        .then(function(j){
+          if(j&&j.ok){show('su-ok','You are subscribed',j.message||'Thank you. Your subscription is confirmed.',false);
+                      try{history.replaceState(null,'',location.pathname);}catch(e){}}
+          else{show('su-hint','We could not confirm this link',(j&&j.message)||'Something went wrong. Please sign up again.',true);}
+        })
+        .catch(function(){show('su-hint','We could not reach the sign-up service','Please check your connection and open the link again.',false);});
+    })();
+</script></main><footer class="site-footer">
+  <div class="wrap">
+    <p class="discl">Western Host is published by GG Investors Pty Ltd (ABN 57 682 794 047), Perth, Western Australia.</p>
+    <nav aria-label="Footer"><ul><li><a href="/about/">About</a></li><li><a href="/advertise/">Advertise</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/corrections/">Corrections</a></li><li><a href="/subscribe/">Subscribe</a></li><li><a href="/feed.xml">RSS</a></li></ul></nav>
+    <p class="footer-tools"><button class="theme-toggle link-toggle" type="button" aria-pressed="false"><span class="tog-light">Switch to dark</span><span class="tog-dark">Switch to light</span></button></p>
+    <p class="fine">Editor: Behzad Bagheri. Advertisements are labelled ADVERTISEMENT. Advertisers, including businesses owned by our publisher, have no say over our articles. General information only, current to 17 November 2026. Not legal, tax or financial advice. Contact and corrections: <a href="mailto:westernhost@gginvestors.com.au">westernhost@gginvestors.com.au</a>.</p>
+  </div>
+</footer>
+</body></html>

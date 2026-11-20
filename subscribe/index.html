@@ -38,9 +38,8 @@
     <h1 class="article-title">Get Western Host free every month</h1>
     <p class="standfirst">One issue a month, by email. We confirm by email before anything is sent, and you can unsubscribe any time.</p>
     <section class="signup">
-      <div class="placeholder-flag"><strong>Set-up note (not shown at go-live):</strong> this form is not yet connected to our email provider (Sender). No address is stored or emailed yet. Access to the Sender account is required to activate double opt-in.</div>
       <p class="consent-text">When you sign up you choose what you receive: the magazine (which contains labelled advertising, including for businesses owned by GG Investors Pty Ltd), and, only if you tick the separate box below, occasional marketing. You confirm by email before anything is sent.</p>
-      <form id="su-form" action="/subscribe/placeholder-not-connected" method="post" novalidate aria-describedby="su-result">
+      <form id="su-form" action="https://dzemryadwiijfybotuuw.supabase.co/functions/v1/wh-subscribe" method="post" novalidate aria-describedby="su-result">
         <input type="hidden" name="consent_wording_version" value="v3-2026-11-19">
         <input type="hidden" name="source_page" value="/subscribe/">
         <div class="field">
@@ -50,6 +49,10 @@
         <div class="field">
           <label for="fname">First name (optional)</label>
           <input type="text" id="fname" name="first_name" autocomplete="given-name">
+        </div>
+        <div class="hp" aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden">
+          <label for="website">Leave this field empty</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
         </div>
         <div class="consent">
           <input type="checkbox" id="c1" name="consent_magazine" value="yes">
@@ -67,29 +70,42 @@
     <p class="fine" style="font-family:var(--sans);font-size:.85rem;color:var(--small)">Double opt-in: after you sign up we send one plain confirmation email with no advertising. Your subscription starts only when you confirm. We record which boxes you ticked, the wording version, the time and the page you signed up from, so you can change or withdraw either consent later. Every email we send names GG Investors Pty Ltd as the sender and has a working unsubscribe link.</p>
     </div></div>
     <script>
-    /* Placeholder submit handler. No email provider is connected yet.
-       Nothing is sent, stored or transmitted anywhere; we only show a message. */
+    /* Sign-up: the box posts to the server-side function (never to Sender directly); the function sends ONE plain
+       confirmation email and stores nothing until the reader confirms. Without JavaScript the form posts the same fields
+       and the function sends the browser back to /subscribe/check-your-email/ (or here with ?error=). */
     (function(){
+      var API='https://dzemryadwiijfybotuuw.supabase.co/functions/v1/wh-subscribe';
       var f=document.getElementById('su-form'),out=document.getElementById('su-result');
       if(!f||!out)return;
+      var btn=f.querySelector('button[type=submit]');
+      var MSG={email:'Please enter a valid email address.',consent:'Please tick the first box to subscribe to the magazine.',
+               rate:'Too many sign-ups from this connection. Please try again in a few minutes.',
+               send:'We could not send the confirmation email just now. Please try again in a few minutes.',
+               not_configured:'Sign-up is not open yet. Please try again later.',
+               origin:'This sign-up box is not allowed to use the sign-up service.'};
+      function show(cls,msg){out.hidden=false;out.className='su-result '+cls;out.textContent=msg;}
+      try{var err=new URLSearchParams(location.search).get('error');if(err)show('su-hint',MSG[err]||'Something went wrong. Please try again.');}catch(e){}
       f.addEventListener('submit',function(e){
         e.preventDefault();
         var email=(f.email&&f.email.value||'').trim(),c1=f.c1&&f.c1.checked;
-        if(!email||email.indexOf('@')<1){
-          out.hidden=false;out.className='su-result su-hint';
-          out.textContent='Please enter your email address so you are ready when sign-up opens.';
-          if(f.email)f.email.focus();return;
-        }
-        if(!c1){
-          out.hidden=false;out.className='su-result su-hint';
-          out.textContent='Please tick the first box to subscribe to the magazine.';
-          if(f.c1)f.c1.focus();return;
-        }
-        out.hidden=false;out.className='su-result su-ok';
-        out.textContent='Sign-up opens soon. Nothing has been stored or sent yet; please check back shortly to confirm your subscription.';
+        if(!email||email.indexOf('@')<1){show('su-hint','Please enter your email address.');if(f.email)f.email.focus();return;}
+        if(!c1){show('su-hint',MSG.consent);if(f.c1)f.c1.focus();return;}
+        if(btn)btn.disabled=true;
+        show('su-hint','Sending your confirmation email…');
+        var body={email:email,first_name:(f.first_name&&f.first_name.value||'').trim(),consent_magazine:'yes',
+                  consent_publisher_marketing:(f.c2&&f.c2.checked)?'yes':'no',
+                  consent_wording_version:(f.consent_wording_version&&f.consent_wording_version.value)||'',
+                  source_page:(f.source_page&&f.source_page.value)||'',website:(f.website&&f.website.value)||''};
+        fetch(API,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(body)})
+          .then(function(r){return r.json().catch(function(){return {ok:false};});})
+          .then(function(j){
+            if(j&&j.ok){show('su-ok',j.message||'Check your email: we have sent you one message with a link to confirm.');f.reset();}
+            else{show('su-hint',(j&&j.message)||'Something went wrong. Please try again.');if(btn)btn.disabled=false;}
+          })
+          .catch(function(){show('su-hint','We could not reach the sign-up service. Please check your connection and try again.');if(btn)btn.disabled=false;});
       });
     })();
-    </script></main><footer class="site-footer">
+</script></main><footer class="site-footer">
   <div class="wrap">
     <p class="discl">Western Host is published by GG Investors Pty Ltd (ABN 57 682 794 047), Perth, Western Australia.</p>
     <nav aria-label="Footer"><ul><li><a href="/about/">About</a></li><li><a href="/advertise/">Advertise</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/corrections/">Corrections</a></li><li><a href="/subscribe/">Subscribe</a></li><li><a href="/feed.xml">RSS</a></li></ul></nav>
