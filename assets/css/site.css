@@ -20,6 +20,8 @@
   --hair:#D8D1C2; --rule:#C9C2B3; --accent:#0B6E8F; --accent-2:#095972; --ochre:#B07D22;
   --onaccent:#FFFFFF; --footbg:#1B1B1A; --foottext:#F0EBDF; --footlink:#A7D6E6; --footmuted:#A39C90; --foothair:rgba(240,235,223,.24);
   --shadow:0 1px 2px rgba(27,27,26,.05);
+  --cover-shadow:0 14px 34px rgba(27,27,26,.18), 0 2px 6px rgba(27,27,26,.10);
+  --cover-shadow-hover:0 20px 44px rgba(27,27,26,.22), 0 3px 8px rgba(27,27,26,.12);
   --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
   --sans:"Poppins", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --maxw:1140px; --measure:40rem;
@@ -31,6 +33,8 @@
   --hair:#36312A; --rule:#3C372F; --accent:#5FC0DE; --accent-2:#8AD4ED; --ochre:#E0AE52;
   --onaccent:#0E1316; --footbg:#0F0C09; --foottext:#ECE6DA; --footlink:#8AD4ED; --footmuted:#9B9488; --foothair:rgba(236,230,218,.22);
   --shadow:0 1px 2px rgba(0,0,0,.4);
+  --cover-shadow:0 0 0 1px rgba(236,230,218,.08), 0 16px 38px rgba(0,0,0,.6), 0 2px 6px rgba(0,0,0,.45);
+  --cover-shadow-hover:0 0 0 1px rgba(236,230,218,.12), 0 22px 48px rgba(0,0,0,.65), 0 3px 8px rgba(0,0,0,.5);
   color-scheme:dark;
 }}
 [data-theme="dark"]{
@@ -38,6 +42,8 @@
   --hair:#36312A; --rule:#3C372F; --accent:#5FC0DE; --accent-2:#8AD4ED; --ochre:#E0AE52;
   --onaccent:#0E1316; --footbg:#0F0C09; --foottext:#ECE6DA; --footlink:#8AD4ED; --footmuted:#9B9488; --foothair:rgba(236,230,218,.22);
   --shadow:0 1px 2px rgba(0,0,0,.4);
+  --cover-shadow:0 0 0 1px rgba(236,230,218,.08), 0 16px 38px rgba(0,0,0,.6), 0 2px 6px rgba(0,0,0,.45);
+  --cover-shadow-hover:0 0 0 1px rgba(236,230,218,.12), 0 22px 48px rgba(0,0,0,.65), 0 3px 8px rgba(0,0,0,.5);
   color-scheme:dark;
 }
 
@@ -155,15 +161,16 @@ figcaption .credit{display:block;font-size:.72rem;color:var(--small);margin-top:
 
 /* ---------- home: issue lede ---------- */
 .issue-lede{display:grid;gap:26px;align-items:start;margin:34px 0 10px}
-@media(min-width:860px){.issue-lede{grid-template-columns:minmax(0,1.6fr) minmax(0,.9fr)}}
+@media(min-width:860px){.issue-lede{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px}}
 .issue-lede-main .article-title{margin:.35rem 0 .3rem}
 .issue-tag{font-family:var(--sans);font-weight:600;font-size:.92rem;color:var(--accent);letter-spacing:.02em;margin:0}
 .lede-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:1.2rem}
+/* the real front cover (page 1 of the PDF), 21 Nov 2026 (msg 3011): a proper size beside the text on desktop,
+   centred at about 70 % of the screen on phones; the same figure.cover rules below give it the shadow, corners and link */
 .issue-lede-aside{align-self:start}
-@media(min-width:860px){.issue-lede-aside{max-width:210px;margin-left:auto}}
-figure.cover-small{max-width:190px;margin:0}
-figure.cover-small img{width:100%;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.16)}
-@media(max-width:859px){figure.cover-small{max-width:150px;margin-top:4px}}
+@media(min-width:860px){.issue-lede-aside{max-width:360px;margin-left:auto;padding-top:.4rem}}
+figure.cover-small{margin:0}
+@media(max-width:859px){.issue-lede-aside figure.cover{max-width:70vw;margin:10px auto 6px}}
 .cover-credit{font-family:var(--sans);font-size:.7rem;color:var(--small);margin:.5rem 0 0}
 
 /* ---------- home: contents list ("In this issue") ---------- */
@@ -187,8 +194,15 @@ figure.cover-small img{width:100%;border-radius:8px;box-shadow:0 8px 24px rgba(0
 @media(min-width:820px){.cover-block{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}}
 .issue-card{margin:22px 0 8px}
 figure.cover{margin:0}
-figure.cover img{border-radius:8px;width:100%}
-figure.cover .cover-img{border-radius:8px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.16)}
+@media(max-width:819px){.issue-card figure.cover{max-width:70vw;margin:0 auto}}
+/* the cover is a link to the PDF (same as the Download button): a plain block, no underline, small radius, soft shadow */
+figure.cover .cover-link{display:block;color:inherit;text-decoration:none;border-radius:6px;-webkit-tap-highlight-color:transparent}
+figure.cover .cover-link:focus-visible{outline:3px solid var(--accent);outline-offset:4px;border-radius:6px}
+figure.cover .cover-img{border-radius:6px;overflow:hidden;box-shadow:var(--cover-shadow);background:var(--surface);transition:box-shadow .25s ease,transform .25s ease}
+figure.cover picture{display:block}
+figure.cover img{display:block;width:100%;height:auto;border-radius:6px;background:var(--surface)}
+@media(hover:hover){figure.cover .cover-link:hover .cover-img{box-shadow:var(--cover-shadow-hover);transform:translateY(-2px)}}
+@media(prefers-reduced-motion:reduce){figure.cover .cover-img{transition:none}figure.cover .cover-link:hover .cover-img{transform:none}}
 .contents{list-style:none;padding:0;margin:0}
 .contents li{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule)}
 .contents .pg{font-family:var(--sans);font-weight:600;font-size:.82rem;color:var(--accent);min-width:3.1em;padding-top:.28em}
