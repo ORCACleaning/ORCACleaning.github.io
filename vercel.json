@@ -24,17 +24,22 @@
   "redirects": [
     {
       "source": "/downloads/Western-Host-2026-11-Issue-23.pdf",
-      "destination": "/downloads/Western-Host-Issue-1-December-2026-v32.pdf",
+      "destination": "/downloads/Western-Host-Issue-1-December-2026-v33.pdf",
       "permanent": false
     },
     {
       "source": "/downloads/Western-Host-2026-11-Issue-1.pdf",
-      "destination": "/downloads/Western-Host-Issue-1-December-2026-v32.pdf",
+      "destination": "/downloads/Western-Host-Issue-1-December-2026-v33.pdf",
       "permanent": false
     },
     {
-      "source": "/downloads/Western-Host-2026-12-Issue-1.pdf",
-      "destination": "/downloads/Western-Host-Issue-1-December-2026-v32.pdf",
+      "source": "/downloads/Western-Host-2026-12-Issue-1.pd",
+      "destination": "/downloads/Western-Host-Issue-1-December-2026-v33.pdf",
+      "permanent": false
+    },
+    {
+      "source": "/downloads/Western-Host-Issue-1-December-2026-v32.pd",
+      "destination": "/downloads/Western-Host-Issue-1-December-2026-v33.pdf",
       "permanent": false
     },
     {
