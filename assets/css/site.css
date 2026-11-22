@@ -66,7 +66,8 @@ hr.rule{border:0;border-top:1px solid var(--rule);margin:40px 0}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 
 /* ---------- header: slim (inner pages) ---------- */
-.site-header{background:var(--paper);border-bottom:1px solid var(--rule);position:sticky;top:0;z-index:50;backdrop-filter:saturate(1.1)}
+/* static on every page (Behzad, 22 Nov 2026): the menu bar scrolls away with the page, same as the home masthead; it is not pinned. */
+.site-header{background:var(--paper);border-bottom:1px solid var(--rule);position:static}
 .site-header .bar{display:flex;align-items:center;gap:16px;padding:12px 22px;max-width:var(--maxw);margin:0 auto}
 .brand{font-family:var(--serif);font-weight:700;font-size:1.3rem;letter-spacing:.2px;color:var(--ink);text-decoration:none;white-space:nowrap;margin-right:auto}
 .brand span{color:var(--accent)}
