@@ -2,6 +2,7 @@
 User-agent: *
 Disallow: /subscribe/check-your-email/
 Disallow: /subscribe/confirm/
+Disallow: /unsubscribe/
 Disallow: /404.html
 Disallow: /email/sig-
 Allow: /

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<script>(function(){try{var t=localStorage.getItem('wh-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<title>Unsubscribe · Western Host</title>
+<meta name="description" content="Unsubscribe from Western Host emails.">
+<link rel="canonical" href="https://westernhost.com.au/unsubscribe/">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#F5F1E8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14110E" media="(prefers-color-scheme: dark)">
+<meta property="og:site_name" content="Western Host">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Unsubscribe · Western Host">
+<meta property="og:description" content="Unsubscribe from Western Host emails.">
+<meta property="og:url" content="https://westernhost.com.au/unsubscribe/">
+<meta property="og:image" content="https://westernhost.com.au/assets/img/og-cover-v2.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="preload" href="/assets/fonts/SourceSerif4-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/Poppins-Medium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="alternate" type="application/rss+xml" title="Western Host issues" href="/feed.xml">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<script src="/assets/js/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="/">Western <span>Host</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="primary" id="nav" aria-label="Primary"><ul><li><a href="/">Home</a></li><li><a href="/issues/2026-12/">Issue 1</a></li><li><a href="/subscribe/" aria-current="page">Subscribe</a></li><li><a href="/about/">About</a></li><li><a href="/advertise/">Advertise</a></li></ul></nav>
+    <div class="head-tools"><a class="icon-btn" href="/search/" aria-label="Search the magazine"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="16.3" y1="16.3" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a><button class="icon-btn theme-toggle" type="button" aria-label="Switch between light and dark" aria-pressed="false"><svg class="i-sun" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1.6" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.4"/><line x1="1.6" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.4" y2="12"/><line x1="4.4" y1="4.4" x2="6.1" y2="6.1"/><line x1="17.9" y1="17.9" x2="19.6" y2="19.6"/><line x1="4.4" y1="19.6" x2="6.1" y2="17.9"/><line x1="17.9" y1="6.1" x2="19.6" y2="4.4"/></g></svg><svg class="i-moon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button></div>
+  </div>
+</header><main id="main"><div class="wrap"><div class="measure">
+    <p class="kicker">Unsubscribe</p>
+    <h1 class="article-title" id="un-title">Unsubscribe</h1>
+    <section class="signup">
+      <p id="un-result" class="su-result su-hint" role="status" aria-live="polite" hidden></p>
+      <form id="un-form" action="https://dzemryadwiijfybotuuw.supabase.co/functions/v1/wh-subscribe/unsubscribe" method="post" novalidate>
+        <div id="un-choice" hidden>
+          <p class="consent-text">Address: <strong id="un-who">(checking)</strong></p>
+          <p><button class="btn" type="submit" name="mode" value="wh">Unsubscribe from Western Host</button></p>
+          <p class="consent-text">No more issues or other emails from Western Host.</p>
+          <p><button class="btn" type="submit" name="mode" value="all">Stop all emails from the publisher</button></p>
+          <p class="consent-text">Also no reader offers or any other email from the publisher, GG Investors Pty Ltd.</p>
+        </div>
+      </form>
+      <noscript><p class="su-result su-hint">This page needs JavaScript. If you cannot turn it on, reply to any Western Host email with the word unsubscribe and we will remove you.</p></noscript>
+    </section>
+    <p class="fine" style="font-family:var(--sans);font-size:.85rem;color:var(--small)">Western Host is published by GG Investors Pty Ltd (ABN 57 682 794 047), Perth, Western Australia. Unsubscribing takes effect at once; nothing more is sent to the address. Changed your mind later? <a href="/subscribe/">Sign up again</a>.</p>
+    </div></div>
+    <script>
+    (function(){
+      var API='https://dzemryadwiijfybotuuw.supabase.co/functions/v1/wh-subscribe';
+      var out=document.getElementById('un-result'),h=document.getElementById('un-title'),box=document.getElementById('un-choice'),
+          who=document.getElementById('un-who'),f=document.getElementById('un-form');
+      if(!out||!f||!box)return;
+      var FALLBACK='Please try again in a few minutes, or reply to any Western Host email with the word unsubscribe and we will remove you.';
+      function show(cls,title,msg){out.hidden=false;out.className='su-result '+cls;out.textContent=msg;if(h&&title)h.textContent=title;}
+      function buttons(on){var b=f.querySelectorAll('button');for(var i=0;i<b.length;i++)b[i].disabled=!on;}
+      var t='';try{t=new URLSearchParams(location.search).get('t')||'';}catch(e){}
+      if(!t){show('su-hint','This link is incomplete','Please open the unsubscribe link from an email we sent you, or reply to any Western Host email with the word unsubscribe and we will remove you.');return;}
+      var chosen='wh';
+      var bs=f.querySelectorAll('button');for(var i=0;i<bs.length;i++)bs[i].addEventListener('click',function(ev){chosen=ev.currentTarget.value||'wh';});
+      fetch(API+'/unsubscribe/verify',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({t:t})})
+        .then(function(r){return r.json().catch(function(){return {ok:false};});})
+        .then(function(j){
+          if(!(j&&j.ok)){show('su-hint','This link is not valid','Please open the unsubscribe link from an email we sent you, or reply to any Western Host email with the word unsubscribe and we will remove you.');return;}
+          who.textContent=j.masked||'this address';
+          if(j.already&&j.already.all){show('su-ok','Already unsubscribed','This address already receives no email from Western Host or its publisher. Nothing more will be sent.');return;}
+          box.hidden=false;
+          if(j.already&&j.already.wh){show('su-hint','Already unsubscribed from Western Host','This address already receives no Western Host emails. You can also stop every email from the publisher below.');}
+        })
+        .catch(function(){show('su-hint','We could not reach the service',FALLBACK);});
+      f.addEventListener('submit',function(ev){
+        ev.preventDefault();
+        var mode=chosen==='all'?'all':'wh';
+        buttons(false);show('su-hint','','One moment, unsubscribing this address.');
+        fetch(API+'/unsubscribe',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({t:t,mode:mode})})
+          .then(function(r){return r.json().catch(function(){return {ok:false};});})
+          .then(function(j){
+            if(j&&j.ok){box.hidden=true;show('su-ok',mode==='all'?'You are unsubscribed from everything':'You are unsubscribed',j.message||'Done. Nothing more will be sent to this address.');try{history.replaceState(null,'',location.pathname);}catch(e){}}
+            else{buttons(true);show('su-hint','We could not unsubscribe you just now',(j&&j.message)||FALLBACK);}
+          })
+          .catch(function(){buttons(true);show('su-hint','We could not reach the service',FALLBACK);});
+      });
+    })();
+</script></main><footer class="site-footer">
+  <div class="wrap">
+    <a class="foot-wordmark" href="/">Western Host</a>
+    <p class="discl">Western Host is published by GG Investors Pty Ltd (ABN <span class="abn">57 682 794 047</span>), Perth, Western Australia.</p>
+    <nav aria-label="Footer"><ul><li><a href="/about/">About</a></li><li><a href="/advertise/">Advertise</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/corrections/">Corrections</a></li><li><a href="/subscribe/">Subscribe</a></li><li><a href="/feed.xml">RSS</a></li></ul></nav>
+    <p class="footer-tools"><button class="theme-toggle foot-toggle" type="button" aria-pressed="false"><svg aria-hidden="true" viewBox="0 0 24 24" width="14" height="14"><circle cx="12" cy="12" r="8.6" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 3.4a8.6 8.6 0 0 1 0 17.2z" fill="currentColor"/></svg><span class="tog-light">Switch to dark</span><span class="tog-dark">Switch to light</span></button></p>
+    <p class="fine">Editor: Behzad Bagheri. Advertisements are labelled ADVERTISEMENT. Advertisers have no say over our articles. General information only, current to 17 November 2026. Not legal, tax or financial advice. Contact and corrections: <a href="mailto:westernhost@gginvestors.com.au">westernhost@gginvestors.com.au</a>.</p>
+  </div>
+</footer>
+</body></html>
