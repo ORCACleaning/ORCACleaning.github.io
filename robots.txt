@@ -3,5 +3,6 @@ User-agent: *
 Disallow: /subscribe/check-your-email/
 Disallow: /subscribe/confirm/
 Disallow: /404.html
+Disallow: /email/sig-
 Allow: /
 Sitemap: https://westernhost.com.au/sitemap.xml
